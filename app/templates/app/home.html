@@ -1,0 +1,448 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<style>
+.navbar-brand {
+ font-family:"Harlow Solid Italic";
+
+}
+ html,
+    body,
+    header,
+    .intro-section {
+      height: 100%;
+    }
+
+    @media (min-width: 560px) and (max-width: 740px) {
+      html,
+      body,
+      header,
+
+      .intro-section {
+        height: 470px;
+      }
+
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      .navbar:not(.top-nav-collapse) {
+        background: #7d8488 !important;
+      }
+
+      .navbar {
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12) !important;
+      }
+    }
+
+.hidden{
+  display:none;
+}
+</style>
+
+  <!-- Navigation & Intro -->
+  <header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+
+      <div class="container">
+
+        <a class="navbar-brand font-weight-bold" href="/">U-short</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+          <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav mr-auto smooth-scroll">
+
+            <li class="nav-item">
+
+              <a class="nav-link text-uppercase" href="/"><i class="fa fa-home "></i><span class="sr-only">(current)</span></a>
+
+            </li>
+
+
+
+          </ul>
+
+          <!-- Social Icon  -->
+          <ul class="navbar-nav nav-flex-icons">
+
+            <li class="nav-item">
+
+              <a class="nav-link"><i class="fab fa-facebook-f light-green-text-2"></i></a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link"><i class="fab fa-twitter light-green-text-2"></i></a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link"><i class="fab fa-instagram light-green-text-2"></i></a>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+    <!-- Video -->
+    <section class="view intro-section" id="home">
+
+      <video class="video-intro"
+        poster="https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20%287%29.jpg" playsinline autoplay
+        muted loop>
+
+        <source src="https://mdbootstrap.com/img/video/animation-intro.mp4" type="video/mp4">
+
+      </video>
+
+      <div class="mask rgba-gradient">
+
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+
+          <div class="row pt-5 mt-3">
+
+            <div class="col-md-12 white-text text-center smooth-scroll">
+
+              <div class="white-text text-center wow fadeInUp">
+
+                <h3 class="display-4 font-weight-bold text-uppercase">URL SHORTNER</h3>
+
+                    <form method="post" id="links" class="">
+                    {% csrf_token %}
+                    <input class=" form-control form-control-md " name="link" id="urls" type="text" placeholder="past a link to shorten eg:www.youtube.com " required="required">
+                    <button type="submit"  class="btn btn-md btn-primary btn-md mt-1 btn-block btnn"> <i class="loading-icon fa fa-spinner fa-spin  hidden"></i> shorten </button>
+
+                    </form>
+
+
+
+            <!-- Card indigo -->
+
+            <div class="card white text-center z-depth-2 mt-4" id="josh">
+              <div class="card-body">
+                <h4 class="black-text display-5 font-weight-lighter" id="h">Link :
+                  </h4>
+              </div>
+            </div>
+
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </header>
+  <!-- Navigation & Intro -->
+
+  <!-- Main layout -->
+
+
+
+ <div class="container-fluid light-grey-background">
+      <div class="container py-4">
+
+        <!--Section: Services-->
+        <section id="services" class="mt-3 mb-3 pb-3">
+
+          <!-- Section heading -->
+          <h3 class="text-center title my-5 pt-4 pb-5 dark-grey-text font-weight-bold wow fadeIn" data-wow-delay="0.2s">
+            <strong>services</strong>
+          </h3>
+
+          <!-- First row -->
+          <div class="row wow fadeIn" data-wow-delay="0.4s">
+
+            <!-- First column -->
+            <div class="col-md-6 mb-4 text-center">
+
+              <!--Panel-->
+              <div class="card card-body text-left white hoverable">
+                <p class="font-weight-bold title font-weight-bold dark-grey-text text-uppercase spacing mt-4 mx-4">
+                  <i class="fas fa-square orange-text mr-2" aria-hidden="true"></i>
+                  <strong>design</strong>
+                </p>
+                <p class="grey-text font-small mx-4">Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                  nesciunt sapiente earu
+                  proident. Ad vegan excepteur butcher vice lomo leggings.
+                  <p class="font-small font-weight-bold orange-text mx-4 mb-0">
+
+                  </p>
+                </p>
+              </div>
+              <!--/.Panel-->
+
+            </div>
+            <!-- /First column -->
+
+            <!-- Second column -->
+            <div class="col-md-6 mb-4 text-center">
+
+              <!--Panel-->
+              <div class="card card-body text-left white hoverable">
+                <p class="font-weight-bold title font-weight-bold dark-grey-text text-uppercase spacing mt-4 mx-4">
+                  <i class="fas fa-square orange-text mr-2" aria-hidden="true"></i>
+                  <strong> no signup</strong>
+                </p>
+                <p class="grey-text font-small mx-4">Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                  nesciunt sapiente earu
+                  proident. Ad vegan excepteur butcher vice lomo leggings.
+                  <p class="font-small font-weight-bold orange-text mx-4 mb-0">
+
+                  </p>
+                </p>
+              </div>
+              <!--/.Panel-->
+
+            </div>
+            <!-- /.Second column -->
+
+            <!-- Third column -->
+            <div class="col-md-6 mb-4 text-center">
+
+              <!--Panel-->
+              <div class="card card-body text-left white hoverable">
+                <p class="font-weight-bold title font-weight-bold dark-grey-text text-uppercase spacing mt-4 mx-4">
+                  <i class="fas fa-square orange-text mr-2" aria-hidden="true"></i>
+                  <strong>Free</strong>
+                </p>
+                <p class="grey-text font-small mx-4">Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                  nesciunt sapiente earu
+                  proident. Ad vegan excepteur butcher vice lomo leggings.
+                  <p class="font-small font-weight-bold orange-text mx-4 mb-0">
+
+                  </p>
+                </p>
+              </div>
+              <!--/.Panel-->
+
+            </div>
+            <!-- /.Third column -->
+
+            <!-- Fourth column -->
+            <div class="col-md-6 mb-4 text-center">
+
+              <!--Panel-->
+              <div class="card card-body text-left white hoverable">
+                <p class="font-weight-bold title font-weight-bold dark-grey-text text-uppercase spacing mt-4 mx-4">
+                  <i class="fas fa-square orange-text mr-2" aria-hidden="true"></i>
+                  <strong>Exqusite <i class=""></i></strong>
+                </p>
+                <p class="grey-text font-small mx-4">Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                  nesciunt sapiente earu
+                  proident. Ad vegan excepteur butcher vice lomo leggings.
+                  <p class="font-small font-weight-bold orange-text mx-4 mb-0">
+
+                  </p>
+                </p>
+              </div>
+              <!--/.Panel-->
+
+            </div>
+            <!-- /.Fourth column -->
+
+          </div>
+          <!-- /.First row -->
+
+        </section>
+        <!--/Section: Services-->
+
+      </div>
+    </div>
+
+
+
+  <!--Footer-->
+  <footer class="page-footer text-center text-md-left unique-color-dark pt-0">
+
+    <div class="top-footer-color">
+      <div class="container">
+
+        <!--Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!--Grid column-->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-md-0">
+            <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+            <!--Facebook-->
+            <a class="p-2 m-2 fa-lg fb-ic ml-0">
+              <i class="fab fa-facebook-f white-text mr-lg-4"> </i>
+            </a>
+            <!--Twitter-->
+            <a class="p-2 m-2 fa-lg tw-ic">
+              <i class="fab fa-twitter white-text mr-lg-4"> </i>
+            </a>
+            <!--Google +-->
+            <a class="p-2 m-2 fa-lg gplus-ic">
+              <i class="fab fa-google-plus-g white-text mr-lg-4"> </i>
+            </a>
+            <!--Linkedin-->
+            <a class="p-2 m-2 fa-lg li-ic">
+              <i class="fab fa-linkedin-in white-text mr-lg-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="p-2 m-2 fa-lg ins-ic">
+              <i class="fab fa-instagram white-text mr-lg-4"> </i>
+            </a>
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+      </div>
+    </div>
+
+    <!--Footer Links-->
+    <div class="container mt-5 mb-4 text-center text-md-left">
+      <div class="row mt-3">
+
+        <!--First column-->
+        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+          <h6 class="spacing font-weight-bold">
+            <strong>Company name</strong>
+          </h6>
+          <hr class="pink accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet,
+            consectetur
+            adipisicing elit.</p>
+        </div>
+        <!--/.First column-->
+
+
+        <!--Third column-->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="spacing font-weight-bold">
+            <strong>Useful links</strong>
+          </h6>
+          <hr class="pink accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+
+          <p>
+            <a href="#!">Become an Affiliate</a>
+          </p>
+          <p>
+            <a href="#!">youtube downloader</a>
+          </p>
+          <p>
+            <a href="#!">Help</a>
+          </p>
+        </div>
+        <!--/.Third column-->
+
+        <!--Fourth column-->
+        <div class="col-md-4 col-lg-3 col-xl-3">
+          <h6 class="spacing font-weight-bold">
+            <strong>Contact</strong>
+          </h6>
+          <hr class="pink accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> joshuatimi41@gmail.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i>+234 81 1665 5869</p>
+          <p>
+            <i class="fas fa-print mr-3"></i> +234 81 1665 5869</p>
+        </div>
+        <!--/.Fourth column-->
+
+      </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!-- Copyright -->
+    <div class="footer-copyright py-3 text-center wow fadeIn" data-wow-delay="0.3s">
+      <div class="container-fluid">
+        © 2023 Copyright: <a href="/">shorturl</a>
+      </div>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!--/.Footer-->
+
+
+    <!--Second container-->
+<script type="text/javascript">
+ $('#josh').hide()
+    $(document).on('submit','#links',function(e){
+        e.preventDefault()
+
+
+      $('.loading-icon').removeClass('hidden')
+       $('.btnn').attr('disabled',true)
+      $('#h').text('fetching url ')
+       $('.btnn').text('loading ..')
+
+
+
+
+        $.ajax({
+            url:'/create/',
+            type:'POST',
+            data:{link:$('#urls').val(),csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()},
+            success:function(data){
+                setTimeout(function(){
+               $(".loading-icon").addClass("hidden")
+               $('.btnn').attr('disabled',false)
+
+               $('.btnn').text('shorten')
+               $('#h').html('localhost:8000/'+data)
+            $('#josh').show()
+                },4000)
+
+              document.getElementById('urls').value= ""
+
+
+
+
+
+            },
+
+        })
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+    {% endblock content %}
